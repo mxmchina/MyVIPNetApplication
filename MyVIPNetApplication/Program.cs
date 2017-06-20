@@ -22,6 +22,8 @@ namespace MyVIPNetApplication
                     Name = "abc"
                 };
 
+
+                //测试github提交同步
                 /*
                  action的调用
                  */
