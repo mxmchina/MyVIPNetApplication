@@ -1,4 +1,5 @@
 ﻿using MyVIPNetApplication.Delegate;
+using MyVIPNetApplication.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -16,37 +17,44 @@ namespace MyVIPNetApplication
             {
 
                 Console.WriteLine("程序开始");
-                Student student = new Student()
+
+                LinqToObjectShow.Show();
+
+                #region 委托
                 {
-                    Id = 1,
-                    Name = "abc"
-                };
+                    Student student = new Student()
+                    {
+                        Id = 1,
+                        Name = "abc"
+                    };
+
+                    //测试github提交同步
+                    /*
+                     action的调用
+                     */
+                    DelegateExtend.SafeInvoke(() => {
+                        student.Study();
+                    });
 
 
-
-
-                //测试github提交同步
-                /*
-                 action的调用
-                 */
-                DelegateExtend.SafeInvoke(()=> {
                     student.Study();
-                });
 
+                    {
+                        /*先实例话一个委托*/
+                        Student.SayHiDelegate method = new Student.SayHiDelegate(student.SayHiChinese);
+                        student.SayHiPerFect("小明", method);
+                    }
 
-                student.Study();
+                    {
+                        /*先实例话一个委托*/
+                        Student.SayHiDelegate method = new Student.SayHiDelegate(student.SayHiJapanese);
+                        student.SayHiPerFect("小明", method);
+                    }
 
-                {
-                    /*先实例话一个委托*/
-                    Student.SayHiDelegate method = new Student.SayHiDelegate(student.SayHiChinese);
-                    student.SayHiPerFect("小明", method);
                 }
+                #endregion
 
-                {
-                    /*先实例话一个委托*/
-                    Student.SayHiDelegate method = new Student.SayHiDelegate(student.SayHiJapanese);
-                    student.SayHiPerFect("小明", method);
-                }
+                
 
 
                 Console.ReadLine();

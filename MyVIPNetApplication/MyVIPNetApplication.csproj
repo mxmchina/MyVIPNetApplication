@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Delegate\DelegateExtend.cs" />
     <Compile Include="Delegate\Student.cs" />
+    <Compile Include="Lambda\LambdaTest.cs" />
+    <Compile Include="Linq\LinqToObjectShow.cs" />
+    <Compile Include="Linq\MxmLing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
