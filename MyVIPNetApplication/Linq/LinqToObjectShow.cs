@@ -20,7 +20,7 @@ namespace MyVIPNetApplication.Linq
 
             var list2 = Enumerable.Where<int>(intlist, i => i > 10).ToList(); 
 
-            var list3 = MxmLing<int>.MxmWhere(intlist, i => i > 10).ToList(); 
+            var list3 = MxmLing.MxmWhere<int>(intlist, i => i > 10).ToList(); 
         }
 
     }

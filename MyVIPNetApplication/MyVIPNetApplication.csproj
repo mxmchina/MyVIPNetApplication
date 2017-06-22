@@ -44,6 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Delegate\DelegateExtend.cs" />
+    <Compile Include="Delegate\DelegateTest.cs" />
+    <Compile Include="Delegate\Event\Baby.cs" />
+    <Compile Include="Delegate\Event\Cat.cs" />
+    <Compile Include="Delegate\Event\CatPram.cs" />
+    <Compile Include="Delegate\Event\Dog.cs" />
+    <Compile Include="Delegate\Event\Mouse.cs" />
     <Compile Include="Delegate\Student.cs" />
     <Compile Include="Lambda\LambdaTest.cs" />
     <Compile Include="Linq\LinqToObjectShow.cs" />

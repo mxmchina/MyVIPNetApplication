@@ -1,4 +1,5 @@
 ﻿using MyVIPNetApplication.Delegate;
+using MyVIPNetApplication.Delegate.Event;
 using MyVIPNetApplication.Linq;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,9 @@ namespace MyVIPNetApplication
         {
             try
             {
+
+                CatPram cat = new CatPram();
+                cat.Start();
 
                 Console.WriteLine("程序开始");
 
