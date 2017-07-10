@@ -1,4 +1,5 @@
-﻿using MyVIPNetApplication.Delegate;
+﻿using MyVIPNetApplication.Bridge;
+using MyVIPNetApplication.Delegate;
 using MyVIPNetApplication.Delegate.Event;
 using MyVIPNetApplication.Linq;
 using System;
@@ -16,6 +17,25 @@ namespace MyVIPNetApplication
         {
             try
             {
+                
+                {
+                    /*
+                      桥接模式：解决多维度的变化
+                      结构型设计模式:关注类与类直接的关系
+                      组合优于继承
+                     */
+
+                    BridgeShow.Show();
+                }
+
+                {
+                    /*字符串拼接*/
+                    List<string> dxlist = new List<string>() { "123", "adfas", "asdfasdfasdf" };
+
+                    var resultStr = dxlist.Aggregate((x, y) => x + "','" + y);
+
+                }
+
 
                 CatPram cat = new CatPram();
                 cat.Start();
