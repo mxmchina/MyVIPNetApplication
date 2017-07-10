@@ -1,0 +1,13 @@
+﻿<configuration>
+  <configSections>
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Microsoft.Practices.Unity.Configuration"/>
+  </configSections>
+  <unity>
+    <containers>
+      <container name="testContainer">
+        <register type="Mxm.Interface.Iphone,Mxm.Interface" mapTo="Mxm.Service.ApplePhone, Mxm.Service"/>
+      </container>
+     
+    </containers>
+  </unity>
+</configuration>
