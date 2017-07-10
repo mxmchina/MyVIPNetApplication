@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyVIPNetApplication", "MyVIPNetApplication\MyVIPNetApplication.csproj", "{092F10F8-7090-4A6F-BB12-00F15181CFB9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IOCUnity", "IOCUnity", "{20206378-7BBA-46AD-A2E9-CFA982976BD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOCUnity", "IOCUnity\IOCUnity.csproj", "{58EA7703-2A5C-4650-A109-666F0BD42F45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,15 @@ Global
 		{092F10F8-7090-4A6F-BB12-00F15181CFB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{092F10F8-7090-4A6F-BB12-00F15181CFB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{092F10F8-7090-4A6F-BB12-00F15181CFB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58EA7703-2A5C-4650-A109-666F0BD42F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58EA7703-2A5C-4650-A109-666F0BD42F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58EA7703-2A5C-4650-A109-666F0BD42F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58EA7703-2A5C-4650-A109-666F0BD42F45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{58EA7703-2A5C-4650-A109-666F0BD42F45} = {20206378-7BBA-46AD-A2E9-CFA982976BD1}
 	EndGlobalSection
 EndGlobal
