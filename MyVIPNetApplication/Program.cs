@@ -1,7 +1,9 @@
 ﻿using MyVIPNetApplication.Bridge;
+using MyVIPNetApplication.Bridge.Phone;
 using MyVIPNetApplication.Delegate;
 using MyVIPNetApplication.Delegate.Event;
 using MyVIPNetApplication.Linq;
+using MyVIPNetApplication.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -17,7 +19,13 @@ namespace MyVIPNetApplication
         {
             try
             {
-                
+
+
+                {
+                    ReflectionTest.Show();
+                }
+
+
                 {
                     /*
                       桥接模式：解决多维度的变化

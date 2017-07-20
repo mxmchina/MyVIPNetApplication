@@ -80,11 +80,15 @@
     <Compile Include="Factory\IRace.cs" />
     <Compile Include="Factory\ObjectFactory.cs" />
     <Compile Include="Generic\GenericTest.cs" />
+    <Compile Include="Generic\ModeBase.cs" />
+    <Compile Include="Generic\SqlHelpMy.cs" />
     <Compile Include="Lambda\LambdaTest.cs" />
     <Compile Include="Linq\LinqToObjectShow.cs" />
     <Compile Include="Linq\MxmLing.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\Iphone.cs" />
+    <Compile Include="Reflection\ReflectionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
