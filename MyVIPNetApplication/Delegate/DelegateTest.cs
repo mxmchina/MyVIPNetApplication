@@ -50,9 +50,24 @@ namespace MyVIPNetApplication.Delegate
             }
 
 
+            {
+                /*委托调用*/
+                int result = Func1((t) => { return t + 3; }, 20);
+            }
+
             
         }
 
+        /// <summary>
+        /// 调用带返回值的有参数的委托方法
+        /// </summary>
+        /// <param name="func"></param>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        public static int Func1(Func<int, int> func, int t)
+        {
+            return func.Invoke(t);
+        }
 
         private void ShowIdName(string name)
         {

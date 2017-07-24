@@ -13,6 +13,7 @@ namespace MyVIPNetApplication.Cache
     {
         public static void Show()
         {
+
             MemoryCacheCache cache1 = new MemoryCacheCache();
             cache1.Add("key1","value1");
             cache1.Add("key1", "value3");
@@ -22,6 +23,17 @@ namespace MyVIPNetApplication.Cache
 
             var result = cache1.Get("key1");
 
+
+            /*带返回值无参数的委托调用*/
+            Func<int> func = () => { return 123; };
+
+            CacheManager.Get<int>("key3", func,40);
+
+            CacheManager.Get<int>("key3", () => 123, 40);
+
         }
+
+
+       
     }
 }
