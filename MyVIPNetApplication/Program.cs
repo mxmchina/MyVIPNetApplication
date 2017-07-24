@@ -1,5 +1,6 @@
 ﻿using MyVIPNetApplication.Bridge;
 using MyVIPNetApplication.Bridge.Phone;
+using MyVIPNetApplication.Cache;
 using MyVIPNetApplication.Delegate;
 using MyVIPNetApplication.Delegate.Event;
 using MyVIPNetApplication.Linq;
@@ -19,7 +20,12 @@ namespace MyVIPNetApplication
         {
             try
             {
+                {
+                    /*缓存*/
+                    CacheTest.Show();
+                    CacheTest test1 = new CacheTest();
 
+                }
 
                 {
                     ReflectionTest.Show();
