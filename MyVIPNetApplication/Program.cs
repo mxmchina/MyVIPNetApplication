@@ -1,6 +1,7 @@
 ﻿using MyVIPNetApplication.Bridge;
 using MyVIPNetApplication.Bridge.Phone;
 using MyVIPNetApplication.Cache;
+using MyVIPNetApplication.CodeFirst;
 using MyVIPNetApplication.Delegate;
 using MyVIPNetApplication.Delegate.Event;
 using MyVIPNetApplication.Linq;
@@ -20,6 +21,17 @@ namespace MyVIPNetApplication
         {
             try
             {
+
+                {
+                    /*EF 6.0*/
+                    using (CodeFirstDB db = new CodeFirstDB())
+                    {
+                        var userslist = db.Users.ToList();
+
+                        var test2 = db.test1.ToList();
+                    }
+                }
+
                 {
                     /*缓存*/
                     CacheTest.Show();

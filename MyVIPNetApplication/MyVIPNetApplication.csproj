@@ -48,10 +48,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +84,12 @@
     <Compile Include="Cache\CacheTest.cs" />
     <Compile Include="Cache\ICache.cs" />
     <Compile Include="Cache\MemoryCacheCache.cs" />
+    <Compile Include="CodeFirst\CodeFirstDB.cs" />
+    <Compile Include="CodeFirst\Company.cs" />
+    <Compile Include="CodeFirst\test1.cs" />
+    <Compile Include="CodeFirst\test2.cs" />
+    <Compile Include="CodeFirst\test3.cs" />
+    <Compile Include="CodeFirst\User.cs" />
     <Compile Include="Delegate\DelegateExtend.cs" />
     <Compile Include="Delegate\DelegateTest.cs" />
     <Compile Include="Delegate\Event\Baby.cs" />
@@ -90,6 +107,31 @@
     <Compile Include="Lambda\LambdaTest.cs" />
     <Compile Include="Linq\LinqToObjectShow.cs" />
     <Compile Include="Linq\MxmLing.cs" />
+    <Compile Include="Migrations\201708090553076_InitialCreate.cs" />
+    <Compile Include="Migrations\201708090553076_InitialCreate.Designer.cs">
+      <DependentUpon>201708090553076_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708090611375_AddBlogCreate.cs" />
+    <Compile Include="Migrations\201708090611375_AddBlogCreate.Designer.cs">
+      <DependentUpon>201708090611375_AddBlogCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708090612509_AddBlogCreate1.cs" />
+    <Compile Include="Migrations\201708090612509_AddBlogCreate1.Designer.cs">
+      <DependentUpon>201708090612509_AddBlogCreate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708090613542_AddBlogCreate2.cs" />
+    <Compile Include="Migrations\201708090613542_AddBlogCreate2.Designer.cs">
+      <DependentUpon>201708090613542_AddBlogCreate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708090614546_AddBlogCreate3.cs" />
+    <Compile Include="Migrations\201708090614546_AddBlogCreate3.Designer.cs">
+      <DependentUpon>201708090614546_AddBlogCreate3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708090643524_AddBlogCreate4.cs" />
+    <Compile Include="Migrations\201708090643524_AddBlogCreate4.Designer.cs">
+      <DependentUpon>201708090643524_AddBlogCreate4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection\Iphone.cs" />
@@ -97,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
@@ -109,6 +152,26 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708090553076_InitialCreate.resx">
+      <DependentUpon>201708090553076_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708090611375_AddBlogCreate.resx">
+      <DependentUpon>201708090611375_AddBlogCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708090612509_AddBlogCreate1.resx">
+      <DependentUpon>201708090612509_AddBlogCreate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708090613542_AddBlogCreate2.resx">
+      <DependentUpon>201708090613542_AddBlogCreate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708090614546_AddBlogCreate3.resx">
+      <DependentUpon>201708090614546_AddBlogCreate3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708090643524_AddBlogCreate4.resx">
+      <DependentUpon>201708090643524_AddBlogCreate4.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
