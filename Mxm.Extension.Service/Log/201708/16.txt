@@ -1,0 +1,12 @@
+Time: 15:52:09  Content: 电信短信发送 , 消息 , content=testuuu,phones=18500362916
+Time: 15:52:10  Content: 电信短信发送 , 错误 , content=testuuu,phones=18500362916,error=System.Xml.XmlException: 根级别上的数据无效。 第 1 行，位置 1。
+   在 System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   在 System.Xml.XmlTextReaderImpl.ParseRootLevelWhitespace()
+   在 System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   在 System.Xml.XmlReader.MoveToContent()
+   在 System.Xml.Linq.XElement.Load(XmlReader reader, LoadOptions options)
+   在 System.Xml.Linq.XElement.Parse(String text, LoadOptions options)
+   在 Mxm.Extension.Main.BLL.RemoteServices.TrqShortMessageRemoteService.Send(String phones, String content) 位置 D:\Code\vs2015\MyVIPNetApplication\Mxm.Extension.Main\BLL\RemoteServices\TrqShortMessageRemoteService.cs:行号 63
+   在 Mxm.Extension.Service.Controllers.ShortMessageController.SendTrq(String phones, String content) 位置 D:\Code\vs2015\MyVIPNetApplication\Mxm.Extension.Service\Controllers\ShortMessageController.cs:行号 42
+Time: 15:52:45  Content: 电信短信发送 , 消息 , content=testuuu,phones=18500362916
+Time: 16:28:57  Content: 电信短信发送 , 消息 , content=testuuu,phones=18500362916

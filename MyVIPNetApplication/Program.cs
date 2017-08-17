@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MyVIPNetApplication
@@ -20,6 +21,32 @@ namespace MyVIPNetApplication
         {
             try
             {
+                {
+
+                    string phones = "18500362916,13456,17812345678,";
+
+                    StringBuilder phonesSb = new StringBuilder();
+                    phones.Split(',').ToList().ForEach(p => {
+
+                        if (Regex.IsMatch(p.Trim(), "0?(13|14|15|17|18)[0-9]{9}"))
+                        {
+                            phonesSb.Append(p.Trim()).Append(","); ;
+                        }
+                    });
+
+                    string phonesStr = string.Empty;
+                    if (phonesSb.Length > 0)
+                    {
+                        phonesStr = phonesSb.ToString().Substring(0, phonesSb.Length - 1);
+                    }
+
+
+                }
+
+
+
+
+
                 {
                     /*缓存*/
                     CacheTest.Show();
@@ -100,7 +127,7 @@ namespace MyVIPNetApplication
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
     }
