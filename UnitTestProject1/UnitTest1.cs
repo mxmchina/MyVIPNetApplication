@@ -6,12 +6,71 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using System.Text;
+using Mxm.Extension.Main.BLL;
+using System.Data;
+using Limilabs.Mail;
+using System.Collections.Generic;
+using Limilabs.Client.IMAP;
+using Limilabs.Mail.MIME;
+using System.Text.RegularExpressions;
 
 namespace UnitTestProject1
 {
     [TestClass]
     public class UnitTest1
     {
+
+        /// <summary>
+        /// 读取邮件的方法
+        /// </summary>
+        [TestMethod]
+        public void TestEmail()
+        {
+            //StringBuilder sb = new StringBuilder();//存放匹配结果
+
+            string sb = "";
+            using (Imap imap = new Imap())
+            {
+                imap.Connect("10.27.130.247");   // or ConnectSSL for SSL
+                imap.UseBestLogin("liushuqian", "L2000sq");
+
+                imap.SelectInbox();
+                List<long> uids = imap.Search(Flag.All);
+
+                foreach (long uid in uids)
+                {
+                    IMail email = new MailBuilder()
+                        .CreateFromEml(imap.GetMessageByUID(uid));
+
+                    //Console.WriteLine(email.Subject);
+                    var su = email.Subject;
+                    if (email.Subject.ToLower().Contains("undelivered"))
+                    {
+                        string body = email.GetBodyAsText();
+
+                        string pattern = @"\<.*?\>";//匹配模式
+
+                        Regex regex = new Regex(pattern, RegexOptions.IgnoreCase);
+
+                        MatchCollection matches = regex.Matches(body);
+
+                        foreach (Match match in matches)
+                        {
+                            string value = match.Value.Trim('(', ')');
+                            if (value.Contains("@"))
+                            {
+                                sb += value + ",";
+                            }
+                        }
+
+                    }
+                }
+                imap.Close();
+            }
+        }
+
+
+
         [TestMethod]
         public void TestMethod1()
         {
