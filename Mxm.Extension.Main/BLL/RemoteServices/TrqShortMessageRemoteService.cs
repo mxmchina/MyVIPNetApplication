@@ -35,8 +35,9 @@ namespace Mxm.Extension.Main.BLL.RemoteServices
 
             string b2mUrl = ConfigurationManager.AppSettings["TRQSHORTMESSAGEESERVICEURL"];
 
-            string cdkey = "8SDK-EMY-6699-RIQTM";
-            string password = "314313";
+            //管道的账号
+            string cdkey = "8SDK-EMY-6699-RIQTN";
+            string password = "312268";
             string phone = phonesStr;
             string msgContent = "【中国石油】" + content.Replace('【', '[').Replace('】', ']');
 
@@ -74,12 +75,12 @@ namespace Mxm.Extension.Main.BLL.RemoteServices
 
         #region 获取token
 
-        private string GetToken()
+        public string GetToken()
         {
             //trq1;6818151b-6713-e611-80c5-0050569d20fb;636384694750520386
 
-            var token = "trq" + ";" + Guid.NewGuid() + ";" + DateTime.UtcNow.Ticks;
-            var encToken = this.Encrypt(token);
+            var token = "trq" + ";" + "6818151B-6713-E611-80C5-0050569D20FB" + ";" + DateTime.UtcNow.Ticks;
+            var encToken = new SecurityService().Encrypt(token);
 
             return encToken;
         }
