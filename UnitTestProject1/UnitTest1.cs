@@ -35,15 +35,44 @@ namespace UnitTestProject1
                 imap.UseBestLogin("liushuqian", "L2000sq");
 
                 imap.SelectInbox();
-                List<long> uids = imap.Search(Flag.All);
+                //List<long> uids = imap.Search(Flag.All);
+
+                //List<long> uids = imap.Search().Where(
+                //    Expression.And(
+                //    Expression.Subject("Undelivered"),
+                //    Expression.Since(DateTime.Parse("2017-12-20 07:36"))
+                //    ));
+
+
+                List<long> uids = imap.Search().Where(
+                    Expression.And(
+                    Expression.HasFlag( Flag.Unseen)
+                    ));
+
+
+                // C#
+
+                //List<long> uidss = imap.Search().Where(
+                //    Expression.And(
+                //        Expression.Not.Not(Expression.Subject("subject not to search")),
+                //        Expression.HasFlag(Flag.Unseen)));
+
+
+
+
 
                 foreach (long uid in uids)
                 {
                     IMail email = new MailBuilder()
                         .CreateFromEml(imap.GetMessageByUID(uid));
-
                     //Console.WriteLine(email.Subject);
-                    var su = email.Subject;
+
+                    var Subject = email.Subject;
+                    var From = email.From;
+                    var Date = email.Date;
+                    var Text = email.Text;
+                    var Html = email.Html;
+                    var Headers = email.Document.Root.Headers["x-spam"];
                     if (email.Subject.ToLower().Contains("undelivered"))
                     {
                         string body = email.GetBodyAsText();
